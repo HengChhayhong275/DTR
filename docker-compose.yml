@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: dtr-db
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dtr-db
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerFile
+  #   container_name: dtr-backend
+  #   # environment:
+  #   #   - PORT=${PORT}
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - db
+  #   volumes:
+  #     - ./src:/app/src
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   restart: always
+  #   container_name: nest-pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+  #     - PGADMIN_DEFAULT_PASSWORD=1234
+  #   ports:
+  #     - '5050:80'
+  #   depends_on:
+  #     - db
