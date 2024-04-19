@@ -18,6 +18,7 @@ import { FileModule } from './modules/file/file.module';
 import { AcceptingRecordModule } from './modules/document/accepting-record/accepting-record.module';
 import { OtherRegisteredRecordModule } from './modules/document/other-registered-record/other-registered-record.module';
 import { DropOffRecordModule } from './modules/document/drop-off-record/drop-off-record.module';
+import { DocumentOriginInfoModule } from './modules/document/document-origin-info/document-origin-info.module'; // Import the module
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { DropOffRecordModule } from './modules/document/drop-off-record/drop-off
     AcceptingRecordModule,
     OtherRegisteredRecordModule,
     DropOffRecordModule,
+    DocumentOriginInfoModule,
   ],
   controllers: [],
   providers: [
